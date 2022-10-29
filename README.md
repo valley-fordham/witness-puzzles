@@ -2,6 +2,10 @@ JavaScript implementation of the puzzles in The Witness
 
 If you want to see the product, head over to [witnesspuzzles.com](https://witnesspuzzles.com)
 
+Thanks to [https://github.com/jbzdarkid/witness-puzzles](jbzdarkid) for this very cool thing.
+
+This fork has some ugly hacks to give it a more minimal and slightly better mobile experience when viewing puzzles. Don't look at the code :)
+
 # Table of Contents
 1. [Overview / Explanation of files](#Overview)
     1. [utilities.js](#utilitiesjs)
