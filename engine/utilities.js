@@ -241,7 +241,7 @@ window.loadHeader = function(titleText) {
   var navbar = document.createElement('div')
   document.body.appendChild(navbar)
   navbar.className = 'navbar'
-  navbar.style = 'min-width: 700px; position: absolute; top: 0; width: 100%; z-index: 1'
+  navbar.style = 'position: absolute; top: 0; width: 100%; z-index: 1'
   navbar.style.borderBottom = '2px solid ' + window.BORDER
   navbar.style.background = window.PAGE_BACKGROUND
 
@@ -279,42 +279,16 @@ window.loadHeader = function(titleText) {
     link2.onpointerdown = function() {window.scrollTo(0, 0)}
 
   } else if (window.location.href.includes('/play/')) {
-    link.innerText = 'Back to all puzzles'
-    link.onpointerdown = function() {window.location = '/browse.html'}
+    link.innerText = ''
+    link.onpointerdown = function() {}
   } else /* All other pages */ {
     link.innerText = 'Browse all puzzles'
     link.onpointerdown = function() {window.location = '/browse.html'}
   }
 
-  var feedbackButton = document.createElement('label')
-  navbar.appendChild(feedbackButton)
-  feedbackButton.id = 'feedbackButton'
-  feedbackButton.style = 'float: right; margin-right: 8px; cursor: pointer; line-height: 60px'
-  feedbackButton.innerText = 'Send feedback'
-  feedbackButton.className = 'navbar-content'
-  feedbackButton.onpointerdown = function() {
-    var feedback = prompt('Provide feedback:')
-    if (feedback) {
-      window.FEEDBACK(feedback)
-    }
-  }
-
-  var separator = document.createElement('label')
-  navbar.appendChild(separator)
-  separator.style = 'float: right; line-height: 60px; padding-left: 6px; padding-right: 6px'
-  separator.className = 'navbar-content'
-  separator.innerText = '|'
-
-  var sourceLink = document.createElement('label')
-  navbar.appendChild(sourceLink)
-  sourceLink.style = 'float: right; line-height: 60px; cursor: pointer'
-  sourceLink.innerText = 'Source code'
-  sourceLink.className = 'navbar-content'
-  sourceLink.onpointerdown = function() {window.location = 'https://github.com/jbzdarkid/witness-puzzles'}
-
   var collapsedSettings = drawSymbol({'type': 'plus', 'width':20, 'height':20})
   navbar.appendChild(collapsedSettings)
-  collapsedSettings.style = 'width: 20px; height: 20px; position: absolute; left: 0; cursor: pointer'
+  collapsedSettings.style = 'width: 20px; height: 20px; position: absolute; left: 0; cursor: pointer; display: none'
   collapsedSettings.style.border = '2px solid ' + window.BORDER
   collapsedSettings.id = 'collapsedSettings'
   collapsedSettings.onpointerdown = function() {

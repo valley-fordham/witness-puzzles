@@ -20,9 +20,23 @@
     <title>{{ title|safe }}</title>
   </head>
   <body>
-    <script>loadHeader('Loading puzzle...')</script>
+    <script>
+      function fixZoom() {
+        if(screen.availHeight > screen.availWidth) {
+          document.body.style.zoom="150%"
+        } else {
+          document.body.style.zoom="100%"
+        }
+      }
+
+      loadHeader('Loading puzzle...')
+      fixZoom()
+      window.addEventListener("orientationchange", function() {
+        fixZoom()
+      }, false)
+  </script>
     <div style="display: flex; justify-content: center; align-items: center">
-      <svg id="puzzle" style="pointer-events: auto"></svg>
+      <svg id="puzzle" style="pointer-events: auto; touch-action: none"></svg>
     </div>
   </body>
   <script>

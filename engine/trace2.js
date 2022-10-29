@@ -396,6 +396,7 @@ window.trace = function(event, puzzle, pos, start, symStart=null) {
 
         if (puzzleData.valid()) {
           window.PLAY_SOUND('success')
+          window.location.replace('http://google.com')
           // !important to override the child animation
           data.animations.insertRule('.' + data.svg.id + ' {animation: 1s 1 forwards line-success !important}\n')
 
