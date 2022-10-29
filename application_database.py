@@ -150,32 +150,3 @@ def add_puzzle_solve(puzzle, session_id, **kwargs):
     .update({'solve_time': datetime.utcnow()})
   db.session.commit()
 
-if application.debug:
-  db.create_all()
-
-  for i in range(1234):
-    db.session.add(Puzzle(
-      display_hash = '267BCA' + str(i),
-      puzzle_json = '{"grid":[[{"type":"line","start":true}],[{"type":"line"}],[{"type":"line","end":"right"}]],"largezero":6,"width":3,"height":1,"pillar":false,"startPoint":{"x":2,"y":0}}',
-      solution_json = '{"grid":[[{"type":"line","line":1,"start":true}],[{"type":"line","line":1}],[{"type":"line","line":1,"end":"right"}]],"largezero":6,"width":3,"height":1,"pillar":false,"startPoint":{"x":2,"y":0}}',
-      date = datetime(2001, 1, 1),
-      url = '/images/26/267BCA24.png',
-      title = 'Puzzle ' + str(i),
-    ))
-  db.session.add(Feedback(
-    page='play_template.html',
-    data='hi this is some feedback'
-  ))
-  db.session.add(Feedback(
-    page='browse.html',
-    data='hi this is some other feedback'
-  ))
-  db.session.add(Error(
-    page='play_template.html',
-    data='error on line 7'
-  ))
-  db.session.add(Error(
-    page='browse.html',
-    data='error on line 12'
-  ))
-  db.session.commit()

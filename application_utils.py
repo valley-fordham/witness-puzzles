@@ -14,7 +14,7 @@ from application_secrets import secrets
 
 application = Flask(__name__, template_folder='pages')
 application.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-application.config['SQLALCHEMY_DATABASE_URI'] = secrets.get_database_uri()
+application.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///D:/Development/witnessData/file.db'
 # application.config['SQLALCHEMY_ENGINE_OPTIONS'] = {
 #   'connect_timeout': 10, # seconds
 # }
