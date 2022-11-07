@@ -407,38 +407,45 @@ window.trace = function(event, puzzle, pos, start, symStart=null) {
           if (window.TRACE_COMPLETION_FUNC) window.TRACE_COMPLETION_FUNC(puzzle, rawPath)
 
           const pathPrefix = "/play/"
+          const puzzle2 = "3D985966"
+          const puzzle3 = "6D664C6D"
+          const puzzle5 = "2DE592E3"
+          const puzzle6 = "99C4FE4D"
+          const puzzle8 = "4CB5ECF7"
+          const puzzle9 = "D9BC33DA"
+
           switch (window.location.pathname) {
             // Location 1
             case pathPrefix + "67B2ADC5":
-                window.location.replace('http://google.com/search?q=test1')
+                window.location.pathname = pathPrefix + puzzle2
                 break;
-            case pathPrefix + "3D985966":
-                window.location.replace('http://google.com/search?q=test2')
+            case pathPrefix + puzzle2:
+                window.location.pathname = pathPrefix + puzzle3
                 break;
-            case pathPrefix + "6D664C6D":
-                window.location.replace('http://google.com/search?q=test3')
+            case pathPrefix + puzzle3:
+                window.location.replace('https://youtu.be/eWh07LJSxjc')
                 break;
 
             // Location 2
             case pathPrefix + "5CB32F26":
-                window.location.replace('http://google.com/search?q=test4')
+                window.location.pathname = pathPrefix + puzzle5
                 break;
-            case pathPrefix + "2DE592E3":
-                window.location.replace('http://google.com/search?q=test5')
+            case pathPrefix + puzzle5:
+                window.location.pathname = pathPrefix + puzzle6
                 break;
-            case pathPrefix + "9C4FE4D":
-                window.location.replace('http://google.com/search?q=test6')
+            case pathPrefix + puzzle6:
+                window.location.replace('https://youtu.be/9cnHfFnPTPQ')
                 break;
 
             // Location 3
             case pathPrefix + "C32EA2C3":
-                window.location.replace('http://google.com/search?q=test7')
+                window.location.pathname = pathPrefix + puzzle8
                 break;
-            case pathPrefix + "4CB5ECF7":
-                window.location.replace('http://google.com/search?q=test8')
+            case pathPrefix + puzzle8:
+                window.location.pathname = pathPrefix + puzzle9
                 break;
-            case pathPrefix + "D9BC33DA":
-                window.location.replace('http://google.com/search?q=test9')
+            case pathPrefix + puzzle9:
+                window.location.replace('https://youtu.be/51eWxvLRUZE')
                 break;
           }
         } else {
