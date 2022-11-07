@@ -396,7 +396,7 @@ window.trace = function(event, puzzle, pos, start, symStart=null) {
 
         if (puzzleData.valid()) {
           window.PLAY_SOUND('success')
-          window.location.replace('http://google.com')
+
           // !important to override the child animation
           data.animations.insertRule('.' + data.svg.id + ' {animation: 1s 1 forwards line-success !important}\n')
 
@@ -404,8 +404,43 @@ window.trace = function(event, puzzle, pos, start, symStart=null) {
           var rawPath = [puzzle.startPoint]
           for (var i=1; i<data.path.length; i++) rawPath.push(data.path[i].dir)
           rawPath.push(0)
-
           if (window.TRACE_COMPLETION_FUNC) window.TRACE_COMPLETION_FUNC(puzzle, rawPath)
+
+          const pathPrefix = "/play/"
+          switch (window.location.pathname) {
+            // Location 1
+            case pathPrefix + "67B2ADC5":
+                window.location.replace('http://google.com/search?q=test1')
+                break;
+            case pathPrefix + "3D985966":
+                window.location.replace('http://google.com/search?q=test2')
+                break;
+            case pathPrefix + "6D664C6D":
+                window.location.replace('http://google.com/search?q=test3')
+                break;
+
+            // Location 2
+            case pathPrefix + "5CB32F26":
+                window.location.replace('http://google.com/search?q=test4')
+                break;
+            case pathPrefix + "2DE592E3":
+                window.location.replace('http://google.com/search?q=test5')
+                break;
+            case pathPrefix + "9C4FE4D":
+                window.location.replace('http://google.com/search?q=test6')
+                break;
+
+            // Location 3
+            case pathPrefix + "C32EA2C3":
+                window.location.replace('http://google.com/search?q=test7')
+                break;
+            case pathPrefix + "4CB5ECF7":
+                window.location.replace('http://google.com/search?q=test8')
+                break;
+            case pathPrefix + "D9BC33DA":
+                window.location.replace('http://google.com/search?q=test9')
+                break;
+          }
         } else {
           window.PLAY_SOUND('fail')
           data.animations.insertRule('.' + data.svg.id + ' {animation: 1s 1 forwards line-fail !important}\n')
