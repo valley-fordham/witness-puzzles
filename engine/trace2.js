@@ -423,7 +423,7 @@ window.trace = function(event, puzzle, pos, start, symStart=null) {
                 window.location.pathname = pathPrefix + puzzle3
                 break;
             case pathPrefix + puzzle3:
-                window.location.replace('https://youtu.be/eWh07LJSxjc')
+                window.location.replace('https://youtu.be/86uIjxm62JU')
                 break;
 
             // Location 2
@@ -445,7 +445,7 @@ window.trace = function(event, puzzle, pos, start, symStart=null) {
                 window.location.pathname = pathPrefix + puzzle9
                 break;
             case pathPrefix + puzzle9:
-                window.location.replace('https://youtu.be/51eWxvLRUZE')
+                window.location.replace('https://youtu.be/xQErL8BgKOI')
                 break;
           }
         } else {
